@@ -1,6 +1,6 @@
-import 'express-async-errors';
-import app from "./app";
-import { AppDataSource } from "./db";
+import "express-async-errors";
+import app from "./start/app";
+import { AppDataSource } from "./start/db";
 
 const main = async () => {
   AppDataSource.initialize();
