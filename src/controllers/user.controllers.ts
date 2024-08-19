@@ -12,3 +12,8 @@ export const createUser = async (req: Request, res: Response) => {
 
   res.status(201).send(user);
 };
+
+export const getUsers = async (req: Request, res: Response) => {
+  const users = await User.find();
+  return res.send(users);
+}

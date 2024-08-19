@@ -9,6 +9,7 @@ import {
 
 @Entity()
 export default class User extends BaseEntity {
+  
   @PrimaryGeneratedColumn()
   id: number;
 
