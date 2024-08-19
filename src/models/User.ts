@@ -18,7 +18,9 @@ export default class User extends BaseEntity {
   @Column()
   lastName: string;
 
-  @Column()
+  @Column({
+    default: true
+  })
   active: boolean;
 
   @CreateDateColumn()
