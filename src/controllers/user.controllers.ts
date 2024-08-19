@@ -18,6 +18,14 @@ export const getUsers = async (req: Request, res: Response) => {
   return res.send(users);
 };
 
+export const getUserById = async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const foundUser = await User.findOneBy({ id: parseInt(id) });
+  if (!foundUser) return res.status(404).send('User not found');
+
+  return res.status(200).send(foundUser);
+};
+
 export const updateUser = async (req: Request, res: Response) => {
   const { firstName, lastName } = req.body;
   const { id } = req.params;
