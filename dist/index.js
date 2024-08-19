@@ -12,8 +12,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const app_1 = __importDefault(require("./app"));
-const db_1 = require("./db");
+require("express-async-errors");
+const app_1 = __importDefault(require("./start/app"));
+const db_1 = require("./start/db");
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     db_1.AppDataSource.initialize();
     const PORT = process.env.PORT || 3000;
